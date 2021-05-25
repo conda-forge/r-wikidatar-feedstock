@@ -1,46 +1,68 @@
 {% set version = "2.1.5" %}
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-wikidatar
-  version: {{ version }}
+  version: {{ version|replace("-", "_") }}
 
 source:
-  fn: WikidataR_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/WikidataR_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/WikidataR/WikidataR_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/WikidataR_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/WikidataR/WikidataR_{{ version }}.tar.gz
   sha256: d3939806bd83c035bed52816732a9b5cc71ab4d6a499a70fbb23f7865f4b06b7
 
 build:
-  noarch: generic
+  merge_build_host: True  # [win]
   number: 0
-  script: R CMD INSTALL --build .
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+  host:
     - r-base
-    - r-wikipedir >=1.4.0
+    - r-hmisc
+    - r-wikidataqueryservicer
+    - r-wikipedir
+    - r-dplyr
     - r-httr
     - r-jsonlite
+    - r-pbapply
+    - r-readr
+    - r-stringr
+    - r-tibble
   run:
     - r-base
-    - r-wikipedir >=1.4.0
+    - r-hmisc
+    - r-wikidataqueryservicer
+    - r-wikipedir
+    - r-dplyr
     - r-httr
     - r-jsonlite
+    - r-pbapply
+    - r-readr
+    - r-stringr
+    - r-tibble
 
 test:
   commands:
-    - $R -e "library('WikidataR')"  # [not win]
+    - $R -e "library('WikidataR')"           # [not win]
     - "\"%R%\" -e \"library('WikidataR')\""  # [win]
 
 about:
-  home: https://cran.r-project.org/web/packages/wikidatar
+  home: https://github.com/TS404/WikidataR/issues
   license: MIT
-  license_file: LICENSE
-  summary: An API client for the Wikidata
+  summary: An API client for the Wikidata <https://www.wikidata.org/wiki/Wikidata:Main_Page>
+    store of semantic data.
+  license_family: MIT
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - LICENSE
 
 extra:
   recipe-maintainers:
