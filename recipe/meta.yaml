@@ -1,4 +1,4 @@
-{% set version = '1.4.0' %}
+{% set version = "2.1.5" %}
 
 package:
   name: r-wikidatar
@@ -9,11 +9,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/WikidataR_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/WikidataR/WikidataR_{{ version }}.tar.gz
-  sha256: 64b1d53d7023249b73a77a7146adc3a8957b7bf3d808ebd6734795e9f58f4b2a
+  sha256: d3939806bd83c035bed52816732a9b5cc71ab4d6a499a70fbb23f7865f4b06b7
 
 build:
   noarch: generic
-  number: 1003
+  number: 0
   script: R CMD INSTALL --build .
   rpaths:
     - lib/R/lib/
