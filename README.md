@@ -1,13 +1,13 @@
 About r-wikidatar
 =================
 
-Home: https://cran.r-project.org/web/packages/wikidatar
+Home: https://github.com/TS404/WikidataR/issues
 
 Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-wikidatar-feedstock/blob/master/LICENSE.txt)
 
-Summary: An API client for the Wikidata
+Summary: An API client for the Wikidata <https://www.wikidata.org/wiki/Wikidata:Main_Page> store of semantic data.
 
 Current build status
 ====================
