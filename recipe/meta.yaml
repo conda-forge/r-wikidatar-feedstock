@@ -29,10 +29,12 @@ requirements:
     - r-hmisc
     - r-wikidataqueryservicer
     - r-wikipedir
+    - r-crayon
     - r-dplyr
     - r-httr
     - r-jsonlite
     - r-pbapply
+    - r-progress
     - r-readr
     - r-stringr
     - r-tibble
@@ -41,10 +43,12 @@ requirements:
     - r-hmisc
     - r-wikidataqueryservicer
     - r-wikipedir
+    - r-crayon
     - r-dplyr
     - r-httr
     - r-jsonlite
     - r-pbapply
+    - r-progress
     - r-readr
     - r-stringr
     - r-tibble
@@ -66,5 +70,4 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - dpryan79
     - ocefpaf
