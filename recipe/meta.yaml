@@ -1,4 +1,4 @@
-{% set version = "2.3.1" %}
+{% set version = "2.3.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/WikidataR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/WikidataR/WikidataR_{{ version }}.tar.gz
-  sha256: dd349d160c1c0bae9e3efa336efc622ea9dd481cc0a449ceab49852d220eb2da
+  sha256: 3da74b0584b8141a1b61b4d8f58e53c0e46524d811b1642bcc01fb7fd6180888
 
 build:
   merge_build_host: true  # [win]
