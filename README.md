@@ -1,11 +1,11 @@
-About r-wikidatar
-=================
+About r-wikidatar-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-wikidatar-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/TS404/WikidataR/issues
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-wikidatar-feedstock/blob/main/LICENSE.txt)
 
 Summary: An API client for the Wikidata <https://www.wikidata.org/wiki/Wikidata:Main_Page> store of semantic data.
 
